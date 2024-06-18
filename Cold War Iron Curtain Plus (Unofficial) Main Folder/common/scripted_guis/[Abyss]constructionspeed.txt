@@ -1,0 +1,34 @@
+scripted_gui = {
+	SCRIPTED_GUI|construction_tab|constructionspeed_button_container = {
+		window_name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|constructionspeed_button_container"
+		parent_window_token = construction_tab
+		context_type = player_context
+		visible = {
+		}
+		effects = {
+			INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BUTTON|constructionspeed_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = CWICP|COUNTRY_FLAG|construction_tab|constructionspeed_hidden
+						}
+					}
+					set_country_flag = CWICP|COUNTRY_FLAG|construction_tab|constructionspeed_hidden
+				}
+				else = {
+					clr_country_flag = CWICP|COUNTRY_FLAG|construction_tab|constructionspeed_hidden
+				}
+			}
+		}
+	}
+	SCRIPTED_GUI|construction_tab|constructionspeed_container = {
+		window_name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|constructionspeed_container"
+		parent_window_token = construction_tab
+		context_type = player_context
+		visible = {
+			NOT = {
+				has_country_flag = CWICP|COUNTRY_FLAG|construction_tab|constructionspeed_hidden
+			}
+		}
+	}
+}

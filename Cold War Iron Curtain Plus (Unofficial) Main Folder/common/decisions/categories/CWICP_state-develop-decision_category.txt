@@ -1,0 +1,8 @@
+CWICP_state-develop-decision_category =
+{
+	priority = 1
+	allowed =
+	{
+		always = yes
+	}
+}

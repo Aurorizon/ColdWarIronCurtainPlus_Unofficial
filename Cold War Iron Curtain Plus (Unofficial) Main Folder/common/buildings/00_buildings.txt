@@ -1,0 +1,406 @@
+buildings = {
+	# show_on_map:
+	#    if provincial = yes, then show_on_map = X is amount per each province
+	#    if provincial = no, then show_on_map = X is amount per state
+	
+	### INFRASTRUCTURE ###
+	# State Infrastructure
+	# 省份基础设施
+	state_infrastructure =
+	{
+		base_cost = 6000
+		per_level_extra_cost = 1000
+		icon_frame = 3
+		infrastructure = no
+		max_level = 10
+		damage_factor = 0.7
+		value = 5
+		local_supplies = 0.5
+	}
+	# Municipal Infrastructure
+	# 市政基础设施
+	infrastructure = {
+		base_cost = 8000
+		per_level_extra_cost = 500
+		
+		icon_frame = 2
+		
+		infrastructure = yes
+		max_level = 11
+		damage_factor = 0.7
+		value = 3
+		# Building Buff
+		local_building_slots_factor = 0.1
+	}
+	# Water Infrastructure
+	# 水利基础设施
+	water_infrastructure =
+	{
+		base_cost = 10000
+		per_level_extra_cost = 2000
+		icon_frame = 1
+		infrastructure = no
+		max_level = 12 # This is the max unlock level
+		value = 2
+		shares_slots = no
+		infrastructure_construction_effect = yes
+	}
+	# Strategic Fuel Reserve
+	# 战略石油储备, 即原版储油罐
+	fuel_silo = {
+		show_on_map = 1
+		base_cost = 10000
+		icon_frame = 19
+		max_level = 2
+		shares_slots = no
+		
+		damage_factor = 1.2
+		value = 3
+		infrastructure_construction_effect = yes
+		fuel_silo = yes
+		
+		show_modifier = yes
+		max_fuel_building = 100.0 #k
+	}
+	# Radar Array
+	# 雷达站
+	radar_station = {
+		show_on_map = 1
+		base_cost = 2500
+		per_level_extra_cost = 500
+		icon_frame = 14
+		
+		radar = yes
+		max_level = 10 # This is the max unlock level
+		damage_factor = 0.5
+		value = 3
+		
+		centered = yes
+		infrastructure_construction_effect = yes
+	}
+	# Air Base
+	# 空军基地
+	air_base = {
+		show_on_map = 1
+		base_cost = 1750
+		per_level_extra_cost = 250
+		icon_frame = 12
+		
+		air_base = yes
+		max_level = 30
+		# 10->30, CWIC Vanilla AIRBASE_CAPACITY_MULT = 50
+		damage_factor = 0.5
+		value = 2
+		allied_build = yes
+		infrastructure_construction_effect = yes
+	}
+	# Anti-Air
+	# 防空设施
+	anti_air_building = {
+		show_on_map = 3
+		base_cost = 4000
+		icon_frame = 13
+		anti_air = yes
+		disabled_in_dmz = yes
+		air_defence = 1
+		max_level = 5 # This is the max unlock level
+		damage_factor = 0.2
+		value = 1
+		infrastructure_construction_effect = yes
+	}
+	# Civil Defense Shelters
+	# 民防掩体
+	nuclear_bunker =
+	{
+		show_on_map = 0
+		has_destroyed_mesh = yes
+		base_cost = 2000
+		per_level_extra_cost = 3000 # 1000->3000
+		icon_frame = 11
+		max_level = 4
+		shares_slots = no
+		damage_factor = 0.1
+		value = 40
+		infrastructure_construction_effect = yes
+	}
+	
+	### DEVELOPMENT ###
+	# Office Park
+	# 办公园区
+	office_park =
+	{
+		show_on_map = 0
+		base_cost = 50000
+		per_level_extra_cost = -750
+		base_cost_conversion = 7500
+		icon_frame = 23
+		max_level = 120 # 50->120
+		shares_slots = yes
+		damage_factor = 2
+		value = 5
+		infrastructure_construction_effect = yes
+	}
+	# Agri-Industrial Complex
+	# 农业工业复合体
+	agri_industrial_complex =
+	{
+		base_cost = 13000
+		per_level_extra_cost = -250
+		base_cost_conversion = 5000
+		icon_frame = 24
+		infrastructure = no
+		max_level = 120 # 50->120 This is the max unlock level
+		local_resources_rubber = 1
+		refinery = yes
+		damage_factor = 0.2
+		value = 5
+		shares_slots = yes
+		infrastructure_construction_effect = yes
+	}
+	# Military-Industrial Manufactory
+	# 军用工厂
+	arms_factory = {
+		show_on_map = 6
+		base_cost = 32500
+		per_level_extra_cost = -500 # New
+		base_cost_conversion = 12500
+		military_production = 1
+		icon_frame = 9
+		max_level = 80 # 40->80
+		shares_slots = yes
+		value = 8
+		infrastructure_construction_effect = yes
+	}
+	# Industrial Park
+	# 工业园区
+	industrial_complex = {
+		show_on_map = 6
+		base_cost = 32500
+		per_level_extra_cost = -500 # New
+		base_cost_conversion = 12500
+		general_production = 1
+		icon_frame = 8
+		max_level = 120 # 60->120
+		shares_slots = yes
+		value = 5
+		infrastructure_construction_effect = yes
+	}
+	# Naval Drydock
+	# 干船坞
+	dockyard = {
+		show_on_map = 1
+		show_on_map_meshes = 3
+		base_cost = 27500
+		per_level_extra_cost = -375
+		base_cost_conversion = 15000
+		only_costal = yes
+		naval_production = 1
+		icon_frame = 10
+		max_level = 80 # 50->80
+		shares_slots = yes
+		value = 5
+		infrastructure_construction_effect = yes
+	}
+	# Petrochemical Refinery
+	# 合成精炼厂
+	synthetic_refinery = {
+		show_on_map = 1
+		base_cost = 32500
+		per_level_extra_cost = -500 # New
+		icon_frame = 16
+		local_resources_oil = 2 # May use local_resources_ + any resource name
+		refinery = yes
+		max_level = 30 # 10->30 This is the max unlock level
+		shares_slots = yes
+		value = 3
+		infrastructure_construction_effect = yes
+		fuel_silo = yes
+		
+		show_modifier = yes
+		fuel_gain_from_states = 12.0 #per hour
+		max_fuel_building = 25.0 #k
+	}
+	# Foundry District
+	steel_factory =
+	{
+		show_on_map = 0
+		base_cost = 17500 # 15000->17500
+		per_level_extra_cost = -250 # New
+		icon_frame = 17
+		local_resources_steel = 3
+		local_resources_aluminium = 1
+		refinery = yes
+		max_level = 40 # 10->40
+		shares_slots = yes
+		value = 3
+		infrastructure_construction_effect = yes
+	}
+	# Rare Earth Hydrometallurgy Plant
+	tungsten_factory =
+	{
+		show_on_map = 0
+		base_cost = 50000 # 15000->50000
+		per_level_extra_cost = -1000 # New
+		icon_frame = 18
+		local_resources_tungsten = 2
+		local_resources_steel = -1
+		refinery = yes
+		max_level = 12 # 5->12
+		shares_slots = yes
+		value = 3
+		infrastructure_construction_effect = yes
+	}
+	# Powerplant - Fossil Fuels
+	# 发电厂 - 化石燃料
+	fossil_fuel_powerplant =
+	{
+		show_on_map = 0
+		base_cost = 12500
+		per_level_extra_cost = -125
+		base_cost_conversion = 7500
+		icon_frame = 5
+		local_resources_electricity = 8 # 5->8
+		refinery = yes
+		max_level = 32 # 15->32 This is the max unlock level
+		shares_slots = yes
+		damage_factor = 2
+		value = 6
+		infrastructure_construction_effect = yes
+	}
+	# Powerplant - Renewables
+	# 发电厂 - 可再生能源
+	renewable_powerplant =
+	{
+		show_on_map = 0
+		base_cost = 20000
+		per_level_extra_cost = -750
+		base_cost_conversion = 5000
+		icon_frame = 4
+		local_resources_electricity = 6 # 5->6
+		refinery = yes
+		max_level = 24 # 10->24 This is the max unlock level
+		shares_slots = yes
+		damage_factor = 0.4
+		value = 20
+		infrastructure_construction_effect = yes
+	}
+	# Powerplant - Nuclear
+	# 发电厂 - 核能
+	nuclear_powerplant =
+	{
+		show_on_map = 0
+		base_cost = 75000 # 35000->75000
+		per_level_extra_cost = -5000 # New
+		icon_frame = 6
+		local_resources_electricity = 36 # 10->36
+		refinery = yes
+		max_level = 3 # 1->3 This is the max unlock level
+		shares_slots = yes
+		damage_factor = 2
+		value = 6
+		infrastructure_construction_effect = yes
+	}
+	# Nuclear Weapons Manufactory
+	# 核武工厂
+	nuclear_reactor = {
+		show_on_map = 1
+		base_cost = 40000
+		icon_frame = 7
+		nuclear_reactor = yes
+		nuclear_production_factor = 20
+		max_level = 2 # This is the max unlock level
+		shares_slots = yes
+		
+		damage_factor = 0.5
+		value = 3
+		
+		infrastructure_construction_effect = yes
+	}
+	# HIDDEN - AI ONLY #
+	# ICBM Silo
+	rocket_site = {
+		show_on_map = 1
+		base_cost = 20000
+		icon_frame = 25
+		rocket_production = 0
+		rocket_launch_capacity = 0
+		max_level = 1
+		shares_slots = yes
+		value = 1
+	}
+	
+	### INSTALLATIONS ###
+	# Supply Hub
+	# 补给站，这是1.11.x补给系统更新的内容之一
+	supply_node = {
+		show_on_map = 1
+		base_cost = 20000
+		provincial = yes
+		disabled_in_dmz = yes
+		icon_frame = 25
+		max_level = 1
+		centered = yes
+		supply_node = yes
+		damage_factor = 0.1
+		allied_build = yes
+		always_shown = yes
+		infrastructure_construction_effect = yes			
+	}
+	# Railways
+	# 铁路，这是1.11.x补给系统更新的内容之一
+	rail_way = {
+		base_cost = 750
+		per_level_extra_cost = 250
+		provincial = yes
+		disabled_in_dmz = yes
+		icon_frame = 26
+		max_level = 1	 
+	}
+	# Naval Base
+	# 海军基地
+	naval_base = {
+		show_on_map = 1
+		show_on_map_meshes = 3
+		always_shown = yes
+		base_cost = 3200
+		per_level_extra_cost = 1000			
+		provincial = yes
+		only_costal = yes
+		is_port = yes
+		icon_frame = 20
+		max_level = 20
+		damage_factor = 0.5
+		value = 1
+		allied_build = yes
+		infrastructure_construction_effect = yes
+	}
+	# Land Fort
+    # 陆地堡垒
+	bunker = {
+		show_on_map = 1
+		has_destroyed_mesh = yes
+		base_cost = 1375
+		per_level_extra_cost = 500
+		provincial = yes
+		disabled_in_dmz = yes
+		icon_frame = 21
+		land_fort = 1
+		max_level = 4
+		value = 1
+	}
+	# Coastal Fort
+    # 海岸堡垒
+	coastal_bunker = {
+		show_on_map = 1
+		has_destroyed_mesh = yes
+		base_cost = 1375
+		per_level_extra_cost = 500
+		provincial = yes
+		disabled_in_dmz = yes
+		only_costal = yes
+		icon_frame = 22
+		naval_fort = 1
+		max_level = 4
+		value = 1
+	}
+}

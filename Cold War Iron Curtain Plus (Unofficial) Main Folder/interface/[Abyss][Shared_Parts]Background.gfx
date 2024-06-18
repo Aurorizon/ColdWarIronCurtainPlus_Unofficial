@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BACKGROUND|header_bg_550x46"
+		textureFile = "gfx/interface/#shared_parts/background/header_bg_550x46.dds"
+	}
+}

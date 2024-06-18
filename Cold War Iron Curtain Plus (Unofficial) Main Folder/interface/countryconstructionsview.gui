@@ -1,0 +1,1202 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "countryconstructionsview"
+		position = { x = -550 y = 86 }
+		show_position = { x = 0 y = 86 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300	
+		size = { width = 550 height = 100%% }
+		clipping = no
+		
+		hide_sound = menu_close_window
+		show_sound = menu_open_window
+		
+		background = {
+			name = "Background"
+			#quadTextureSprite = "GFX_tiled_pol_bg"
+			quadTextureSprite = "GFX_INTERFACE|SHARED_PARTS|TILES|basic_tiled_window_border"
+		}
+
+		#iconType ={
+		#	name ="construction_screen_top_bg"
+		#	spriteType = "GFX_Abyss|construction_tab|construction_screen_top_bg"
+		#	position = { x= 5 y = 40 }
+		#	Orientation = "UPPER_LEFT"
+		#}
+		
+		iconType ={
+			name ="production_header_bg"
+			spriteType = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BACKGROUND|countryconstructionsview_header_bg"
+			position = { x= 0 y = 0 }
+			Orientation = "UPPER_LEFT"
+		}
+		
+		instantTextboxType = {
+			name = "construction_title"
+			position = { x = 12 y = 5 }
+			textureFile = ""
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "CONSTRUCTION_VIEW_LABLE"
+			maxWidth = 240
+			maxHeight = 20
+			format = left	
+		}
+
+		@IconRow_1 = 47
+		@IconRow_2 = 75
+		@TextColumn_1 = 20
+		@TextColumn_2 = 48
+		@TextRow_1 = 52
+		@TextRow_2 = 80
+		@ButtonColumn_1 = 40
+		@ButtonColumn_2 = 120
+		@ButtonRow_1 = @IconRow_2
+		containerWindowType = {
+			name = "production_win_top"
+			position = { x = 0 y = 0 } #x28 y26
+			size = { width = 100% height = 80% }
+			verticalScrollbar = "right_vertical_slider"
+
+			#background = {
+			#	name = "Background"
+			#	spriteType ="GFX_production_win_top"
+			#}
+
+			iconType = {
+				name = "civilian_factory_icon"
+				position = { x = 9 y = 47 }
+				spriteType = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|ICON|non_available_factory_icon"
+			}
+
+			instantTextboxType = {
+				name = "available_factories_value"
+				position = { x = @TextColumn_2 y = @TextRow_1 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				borderSize = {x = 0 y = 0}
+				text = "20/37"
+				maxWidth = 90
+				maxHeight = 18
+				format = center
+			}
+
+			instantTextboxType = {
+				name = "from_trade"
+				position = { x = 155 y = @TextRow_1 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				borderSize = {x = 0 y = 0}
+				text = "from_trade"
+				maxWidth = 200
+				maxHeight = 20
+				format = left
+			}
+			instantTextboxType = {
+				name = "traded_factories_value"
+				position = { x = 248 y = @TextRow_1 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				borderSize = {x = 0 y = 0}
+				text = "99"
+				maxWidth = 70
+				maxHeight = 20
+				format = right
+			}
+
+			instantTextboxType = {
+				name = "local_factories"
+				position = { x = 155 y = @TextRow_2 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				borderSize = {x = 0 y = 0}
+				text = "owned"
+				maxWidth = 200
+				maxHeight = 20
+				format = left
+			}
+			
+			instantTextboxType = {
+				name = "local_factories_value"
+				position = { x = 248 y = @TextRow_2 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				borderSize = {x = 0 y = 0}
+				text = "99"
+				maxWidth = 70
+				maxHeight = 20
+				format = right
+			}
+
+			# Economic Capacity Surplus
+			iconType = {
+				name = "cic_bank_icon"
+				position = { x = 328 y = 47 }
+				spriteType = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|ICON|civ_factory_output_icon"
+				hide = no # Remove this line to show CIC bank info in the Constructions view.
+			}
+
+			instantTextboxType = {
+				name = "cic_bank_value"
+				position = { x = 355 y = @TextRow_1 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				borderSize = { x = 0 y = 0 }
+				text = "0"
+				maxWidth = 70
+				maxHeight = 20
+				format = RIGHT
+				hide = no # Remove this line to show CIC bank info in the Constructions view.
+			}
+
+			iconType = {
+				name = "construction_speed_icon"
+				position = { x = 328 y = 75 }
+				spriteType = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|ICON|construction_speed_icon"
+			}
+			
+			instantTextboxType = {
+				name = "construction_speed_value"
+				position = { x = 355 y = @TextRow_2 }
+				textureFile = ""
+				font = "hoi_18mbs"
+				borderSize = {x = 0 y = 0}
+				text = "99"
+				maxWidth = 70
+				maxHeight = 20
+				format = RIGHT
+			}
+		}
+		containerWindowType = {
+			name = "count_container"
+			position = { x = 0 y = 0 }
+			orientation = UPPER_LEFT
+			#iconType ={
+			#	name ="bg"
+			#	spriteType = "GFX_generic_box_80"
+			#	position = { x=35 y=1 }
+			#	Orientation = "UPPER_LEFT"
+			#	pdx_tooltip = "REPAIR_ASSIGNMENT_INFO_FACTORIES"
+			#}
+
+			iconType = {
+				name = "factories_used"
+				position = { x = 9 y = 75 }
+				spriteType = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|ICON|temp_icon"
+				frame = 1
+				pdx_tooltip = "REPAIR_ASSIGNMENT_INFO_FACTORIES"
+			}
+
+			instantTextboxType = {
+				name = "factories_used_txt"
+				position = { x = @TextColumn_2 y = @TextRow_2 }
+				font = "hoi_18mbs"
+				borderSize = {x = 0 y = 0}
+				text = "42"
+				maxWidth = 90
+				maxHeight = 18
+				fixedsize = yes
+				format = center
+				pdx_tooltip = "REPAIR_ASSIGNMENT_INFO_FACTORIES"
+			}
+			buttonType = {
+				name = "factories_sub_1x"
+				position = { x = @ButtonColumn_1 y = @ButtonRow_1 }
+				quadTextureSprite = "GFX_subtract_one"
+				font = "hoi_16mbs"
+				clicksound = click_default
+				pdx_tooltip = "PRODUCTION_SUB_FACTORIES_CLICK"
+			}
+			buttonType = {
+				name = "factories_sub_5x"
+				position = { x = @ButtonColumn_1 y = @ButtonRow_1 }
+				quadTextureSprite = "GFX_subtract_5"
+				font = "hoi_16mbs"
+				clicksound = click_default
+				pdx_tooltip = "PRODUCTION_SUB_FACTORIES_CLICK"
+			}
+			buttonType = {
+				name = "factories_sub_10x"
+				position = { x = @ButtonColumn_1 y = @ButtonRow_1 }
+				quadTextureSprite = "GFX_subtract_10"
+				font = "hoi_16mbs"
+				clicksound = click_default
+				pdx_tooltip = "PRODUCTION_SUB_FACTORIES_CLICK"
+			}
+			buttonType = {
+				name = "factories_add_1x"
+				position = { x = @ButtonColumn_2 y = @ButtonRow_1 }
+				quadTextureSprite = "GFX_add_one"
+				font = "hoi_16mbs"
+				clicksound = click_default
+				pdx_tooltip = "PRODUCTION_ADD_FACTORIES_CLICK"
+			}
+			buttonType = {
+				name = "factories_add_5x"
+				position = { x = @ButtonColumn_2 y = @ButtonRow_1 }
+				quadTextureSprite = "GFX_add_5"
+				font = "hoi_16mbs"
+				clicksound = click_default
+				pdx_tooltip = "PRODUCTION_ADD_FACTORIES_CLICK"
+			}
+			buttonType = {
+				name = "factories_add_10x"
+				position = { x = @ButtonColumn_2 y = @ButtonRow_1 }
+				quadTextureSprite = "GFX_add_10"
+				font = "hoi_16mbs"
+				clicksound = click_default
+				pdx_tooltip = "PRODUCTION_ADD_FACTORIES_CLICK"
+			}
+		}
+			
+		instantTextboxType = {
+			name = "location"
+			position = { x = 20 y = 112 }
+			font = "hoi_18mbs"
+			maxWidth = 150			
+			text = "CONSTRUCTION_LOCATION_LABEL"
+			format = center
+		}
+		instantTextboxType = {
+			name = "task"
+			position = { x = 180 y = 112 }
+			font = "hoi_18mbs"
+			maxWidth = 80				
+			text = "CONSTRUCTION_TASK_LABEL"
+			format = center
+		}
+		iconType = {
+			name = "factories"
+			position = { x = 268 y = 108 }
+			spriteType = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|ICON|non_available_factory_icon"
+		}
+		instantTextboxType = {
+			name = "factories_amount"
+			position = { x = 292 y = 112 }
+			font = "hoi_18mbs"
+			maxWidth = 20			
+			text = "CONSTRUCTION_FACTORIES_LABEL"
+			format = center
+		}
+		instantTextboxType = {
+			name = "priority"
+			position = { x = 314 y = 112 }
+			font = "hoi_18mbs"
+			maxWidth = 110				
+			text = "CONSTRUCTION_PRIORITY_LABEL"
+			format = center
+		}
+			
+		containerWindowType = {
+			name = "production_lines"
+			position = { x = 0 y = 138 }
+			size = { width = 439 height = 100%% }
+			#verticalScrollbar = "right_vertical_slider"
+			verticalScrollbar = "TEST_right_vertical_slider"
+			vertical_scroll_step = 1 #原始值为50
+			scroll_wheel_factor = 40
+			smooth_scrolling = yes
+			margin = { top = 5 left = 9 bottom = 9 right = 15 } # bottom = 13?
+			
+			background = {
+				name = "Background"
+				#quadTextureSprite ="GFX_tiled_window2_1b_border"
+				quadTextureSprite = "GFX_Abyss|tiles|tiled_window_scrollwheel_border"
+			}
+
+			# 这一gridBoxType控制建筑队列与民用消费品的显示
+			gridBoxType = {
+				name = "item_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 100% height = 100%% }
+				slotsize = { width = 400 height = 1 }
+				max_slots_horizontal = 1
+				format = "UPPER_LEFT"
+			}
+		}
+		
+		containerWindowType = {
+			name = "possible_constructions"
+			position = { x = 440 y = 46 } # x = 438
+			size = { width = 104 height = 785 }
+			clipping = no
+			orientation = UPPER_LEFT
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BACKGROUND|possible_constructions_BG"
+			}
+			#iconType = {
+			#	name = "shared_constructions"
+			#	position = { x = 5 y = 155 }
+			#	quadTextureSprite = "GFX_shared_constructions"
+			#}
+			#iconType = {
+			#	name = "province_constructions"
+			#	position = { x = 5 y = 383 }
+			#	quadTextureSprite = "GFX_province_constructions"
+			#}
+			# INFRASTRUCTURE | STATE SHARED BUILDINGS
+			# 基础设施
+			iconType = {
+				name = "label_1"
+				position = { x = 4 y = 4 }
+				spriteType = "GFX_Construction_Menu_Label"
+			}
+			instantTextboxType = {
+				name = "construction_title1"
+				position = { x = 13 y = 9 }
+				textureFile = ""
+				font = "hoi_16mbs"
+				borderSize = {x = 0 y = 0}
+				text = "Infrastructure"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+			gridBoxType = {
+				name = "non_shared_item_grid"
+				position = { x = 7 y = -6 }
+				size = { width = 100% height = 100% }
+				slotsize = { width = 48 height = 48 }
+				max_slots_horizontal = 2
+				format = UPPER_LEFT
+			}
+			# DEVELOPMENT | STATE SHARED BUILDINGS
+			# 发展
+			iconType = {
+				name = "label_2"
+				position = { x = 4 y = 225 }
+				spriteType = "GFX_Construction_Menu_Label"
+			}
+			instantTextboxType = {
+				name = "construction_title2"
+				position = { x = 15 y = 229 }
+				textureFile = ""
+				font = "hoi_16mbs"
+				borderSize = {x = 0 y = 0}
+				text = "Development"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+			gridBoxType = {
+				name = "shared_item_grid"
+				position = { x = 7 y = 215 }
+				size = { width = 100% height = 100% }
+				slotsize = { width = 48 height = 48 }
+				max_slots_horizontal = 2
+				max_slots_vertical = 6
+				format = "UPPER_LEFT"
+			}
+			# INSTALLATIONS | PROVINCE_BUILDING
+			# 军事设施
+			iconType = {
+				name = "label_3"
+				position = { x = 4 y = 542 }
+				spriteType = "GFX_Construction_Menu_Label"
+			}
+			instantTextboxType = {
+				name = "construction_title3"
+				position = { x = 18 y = 547 }
+				textureFile = ""
+				font = "hoi_16mbs"
+				borderSize = {x = 0 y = 0}
+				text = "Installations"
+				maxWidth = 240
+				maxHeight = 20
+				format = left	
+			}
+			gridBoxType = {
+				name = "province_item_grid"
+				position = { x = 7 y = 532 }
+				size = { width = 100% height = 100% }
+				slotsize = { width = 48 height = 48 }
+				max_slots_horizontal = 2
+				format = "UPPER_LEFT"
+			}
+		}
+
+		buttonType = {
+			name = "convert_ic_button"
+			position = { x = -57 y = 706 }
+			quadTextureSprite ="GFX_convert_ic_button"
+			buttonFont = "Main_14_black"
+			Orientation = UPPER_RIGHT
+			pdx_tooltip = "CONSTRUCTION_CONVERT_IC_TOOLTIP"
+			pdx_tooltip_delayed = "CONSTRUCTION_CONVERT_IC_TOOLTIP_DELAYED"
+		}
+				
+		buttonType = {
+			name = "minimize"
+			position = { x = -43 y = 797 }
+			quadTextureSprite ="GFX_production_line_arrow_left"
+			buttonFont = "Main_14_black"
+			Orientation = UPPER_RIGHT
+			pdx_tooltip = "CONSTRUCTION_MINIMIZE"
+		}
+		
+		buttonType = {
+			name = "expand"
+			position = { x = -43 y = 797 }
+			quadTextureSprite ="GFX_production_line_arrow_right"
+			buttonFont = "Main_14_black"
+			Orientation = UPPER_RIGHT
+			pdx_tooltip = "CONSTRUCTION_EXPAND"
+		}
+		
+		buttonType = {
+			name = "close_button"
+			position = { x = -40 y = 6 }
+			quadTextureSprite ="GFX_INTERFACE|SHARED_PARTS|BUTTON|closebutton_34x34"
+			buttonFont = "Main_14_black"
+			shortcut = "ESCAPE"
+			Orientation = "UPPER_RIGHT"
+			clicksound = click_close
+		}
+		
+		#todo remove, text icons are not being displayed unless they are in gui
+		buttonType = {
+			name = "temp"
+			position = { x = -402 y = 9 }
+			quadTextureSprite ="GFX_backhoe_icon_small"
+			buttonFont = "Main_14_black"
+			Orientation = "UPPER_LEFT"
+		}
+		
+		iconType ={
+			name ="tutorial_glow"
+			spriteType = "GFX_tutorial_building_icon_glow"
+			position = { x= 491 y = 244 }
+			Orientation = "UPPER_LEFT"
+			hide = yes
+		}
+	}
+	
+	containerWindowType = {
+		name = "start_construction_entry"
+		position = { x=-2 y=35 }
+		size = { width = 46 height = 46 }
+		clipping = no
+		buttonType = {
+			name = "start_construction_button"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_buildings_strip"
+			clicksound = click_default
+		}
+		iconType = {
+			name = "start_construction_overlay"
+			position = { x = -1 y = -1 }
+			quadTextureSprite = "GFX_construction_glow_overlay"
+		}
+	}
+	
+	### Special Entry ###
+	# Static Consumer Goods Entry
+	# 静态消费品条目
+	containerWindowType = {
+		name = "static_consumer_goods_entry"
+		position = { x=0 y=0 }
+		size = { width = 406 height = 54 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BACKGROUND|construction_top_special_entry_bg"
+		}
+		
+		instantTextboxType = {
+			name = "name"
+			position = { x = 22 y = 18 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "PRODUCTION_CONSUMER_GOODS"
+			maxWidth = 150
+			maxHeight = 20
+			format = left
+			vertical_alignment = center 
+			
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "picture"
+			position = { x = 210 y = 28 }
+			spriteType = "GFX_consumer_goods_icon"
+			centerposition = yes
+			
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "factories"
+			position = { x = 249 y = 19 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			text = "-"
+			maxWidth = 60
+			maxHeight = 20
+			format = center
+			
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "static_traded_factories_entry"
+		position = { x=0 y=0 }
+		size = { width = 406 height = 52 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BACKGROUND|construction_special_entry_bg"
+		}
+		
+		instantTextboxType = {
+			name = "name"
+			position = { x = 22 y = 16 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "CONSTRUCTION_FACTORIES_TRADE_LABEL"
+			maxWidth = 250
+			maxHeight = 20
+			format = left
+			
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "picture"
+			position = { x = 210 y = 26 }
+			spriteType = "GFX_traded_factories_icon"
+			centerposition = yes
+			
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "factories"
+			position = { x = 249 y = 17 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			text = "-"
+			maxWidth = 60
+			maxHeight = 20
+			format = center
+			
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "static_project_factories_entry"
+		position = { x=0 y=0 }
+		size = { width = 406 height = 52 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BACKGROUND|construction_special_entry_bg"
+		}
+		
+		instantTextboxType = {
+			name = "name"
+			position = { x = 22 y = 16 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "CONSTRUCTION_FACTORIES_PROJECTS_LABEL"
+			maxWidth = 250
+			maxHeight = 20
+			format = left
+			
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "picture"
+			position = { x = 210 y = 26 }
+			spriteType = "GFX_special_project_icon"
+			centerposition = yes
+			
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "factories"
+			position = { x = 249 y = 17 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			text = "-"
+			maxWidth = 60
+			maxHeight = 20
+			format = center
+			
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "static_contract_payment_entry"
+		position = { x=0 y=0 }
+		size = { width = 406 height = 52 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BACKGROUND|construction_special_entry_bg"
+		}
+
+		instantTextboxType = {
+			name = "name"
+			position = { x = 22 y = 16 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = { x = 0 y = 0 }
+			text = "CONSTRUCTION_FACTORIES_MARKET_CONTRACT_LABEL"
+			maxWidth = 150
+			maxHeight = 20
+			format = left
+
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "picture"
+			position = { x = 210 y = 26 }
+			spriteType = "GFX_ongoing_market_contract_icon"
+			centerposition = yes
+
+			alwaystransparent = yes
+		}
+
+		instantTextboxType = {
+			name = "factories"
+			position = { x = 249 y = 17 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			text = "-"
+			maxWidth = 60
+			maxHeight = 20
+			format = center
+
+			alwaystransparent = yes
+		}
+
+		buttonType = {
+			name = "open_market_view_btn"
+			position = { x = 317 y = 12 }
+			quadTextureSprite ="GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BUTTON|button_80x30"
+			buttonFont = "hoi_16mbs"
+			Orientation = "UPPER_LEFT"
+			buttonText = "CONSTRUCTION_GO_TO_MARKET_BUTTON"
+		}
+	}
+	### Common Entry ###
+	containerWindowType = {
+		name = "production_building_line_entry"
+		position = { x=0 y=0 }
+		size = { width = 406 height = 52 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			#quadTextureSprite = "GFX_construction_entry_bg"
+			quadTextureSprite = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BACKGROUND|construction_entry_bg"
+			pdx_tooltip = "PRODUCTION_DRAG_N_DROP"
+		}
+		##############
+		### PART A ###
+		##############
+		iconType = {
+			name = "new_glow"
+			position = { x = 2 y = 2 }
+			spriteType = "GFX_construction_line_glow"
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "relative_flag"
+			quadTextureSprite ="GFX_construction_flag"
+			position = { x= 5 y = -1 }
+			alwaystransparent = yes
+		}
+		#iconType ={
+		#	name ="country_flag_frame"
+		#	spriteType = "GFX_flag_small_golden_frame"
+		#	position = { x= 142 y = 4 }
+		#	Orientation = "UPPER_LEFT"
+		#	alwaystransparent = yes
+		#}
+		#buttonType = {
+		#	name = "relative_flag"
+		#	quadTextureSprite ="GFX_flag_small2"
+		#	position = { x= 10 y = 12 }
+		#}
+		instantTextboxType = {
+			name = "location"
+			position = { x = 22 y = 7 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			text = "Maus"
+			maxWidth = 150
+			maxHeight = 40
+			format = left
+			multiline = yes
+			vertical_alignment = center
+			alwaystransparent = yes
+		}
+		##############
+		### PART B ###
+		##############
+		iconType = {
+			name = "picture"
+			position = { x = 176 y = 3 }
+			spriteType = "GFX_buildings_strip"
+		}
+		# Num of inprogress buildings in this line
+		instantTextboxType = {
+			name = "queued"
+			position = { x = 197 y = 29 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			text = "-"
+			maxWidth = 20
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "overlay"
+			position = { x = 176 y = 3 }
+			spriteType = "GFX_building_status_overlay"
+			frame = 2
+			alwaystransparent = yes
+		}
+		# Repair Overlay
+		iconType = {
+			name = "repair"
+			spriteType = "GFX_building_repair"
+			position = { x= 178 y = 4 }
+		}
+		buttonType = {
+			name = "increase_amount"
+			quadTextureSprite ="GFX_zoom_in"
+			position = { x = 221 y = 3 }
+			pdx_tooltip = "CONSTRUCTION_INCREASE_AMOUNT_LABEL"
+			pdx_tooltip_delayed = "CONSTRUCTION_MAXIMIZE"
+			#scale = 0.9
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "decrease_amount"
+			quadTextureSprite ="GFX_zoom_out"
+			position = { x = 221 y = 24 }
+			#scale = 0.9	
+			clicksound = click_default		
+		}
+		##############
+		### PART C ###
+		##############
+		# Contruction BG for ongoing item
+		iconType = {
+			name = "ongoing_contruction_anim"
+			spriteType = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|ANIMATION|ongoing_contruction_anim"
+			position = { x = 249 y = 11 }
+		}
+		# num of Factories in use
+		instantTextboxType = {
+			name = "factories"
+			position = { x = 254 y = 12 }
+			textureFile = ""
+			font = "hoi_18mbs"
+			text = "-"
+			maxWidth = 50
+			maxHeight = 20
+			format = center
+		}
+		iconType = {
+			name = "progress"
+			spriteType = "GFX_construction_progressbar"
+			position = { x= 249 y = 32 }
+		}
+		buttonType = {
+			name = "increase_priority"
+			position = { x=322 y=13 }
+			quadTextureSprite = "GFX_arrow_up_small"
+			pdx_tooltip = "PRODUCTION_INCREASE_PRIORITY_LABEL"
+			pdx_tooltip_delayed = "PRODUCTION_PRIORITY_DELAYED"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "decrease_priority"
+			position = { x=346 y=13	 }
+			quadTextureSprite = "GFX_arrow_down_small"
+			pdx_tooltip = "PRODUCTION_DECREASE_PRIORITY_LABEL"
+			pdx_tooltip_delayed = "PRODUCTION_PRIORITY_DELAYED"
+			clicksound = click_default
+		}
+		buttonType = {
+			name = "close_production_line"
+			position = { x=370 y=14	 }
+			quadTextureSprite = "GFX_closebutton_small"
+			clicksound = click_default
+		}
+
+		iconType = {
+            name = "scorched_icon"
+            position = { x = 262 y = 10 }
+            quadTextureSprite ="GFX_scorched_earth"
+            pdx_tooltip = "SCORCHED_EARTH_STATE_PREVENT_REPAIRS"
+        }
+	}
+}
+
+### Abyss - Construction Speed ###
+guiTypes = {
+	containerWindowType = {
+		name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|constructionspeed_button_container"
+		position = { x = 442 y = 10 }
+		size = { width = 500 height = 500 }
+
+		#开关按钮
+		buttonType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BUTTON|constructionspeed_button"
+			quadTextureSprite = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BUTTON|constructionspeed_button"
+			position = { x = 0 y = 0 }
+			shortcut = "h"
+			clicksound = click_ok
+			oversound = ui_menu_over
+			pdx_tooltip = construction_speed_open_tt
+		}
+	}
+	@x_A1 = 436
+	@x_B1 = 484
+	@y_A1 = 103
+	@y_A2 = 151
+	@y_A3 = 199
+	@y_A4 = 247
+	@y_B1 = 324
+	@y_B2 = 372
+	@y_B3 = 420
+	@y_B4 = 468
+	@y_B5 = 516
+	@y_B6 = 564
+	@y_C1 = 641
+	@y_C2 = 689
+	@y_C3 = 737
+	containerWindowType = {
+		name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|constructionspeed_container"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 500 }
+
+		# 各建筑建造速度
+		# Construcion speed for each buildings
+		### INFRASTRUCTURE ###
+		# State Infrastructure
+		# 省份基础设施
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|state_infrastructure_speed"
+			position = { x = @x_A1 y = @y_A1 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_state_infrastructure_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Municipal Infrastructure
+		# 市政基础设施
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|municipal_infrastructure_speed"
+			position = { x = @x_B1 y = @y_A1 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_infrastructure_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Water Infrastructure
+		# 水利基础设施
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|water_infrastructure_speed"
+			position = { x = @x_A1 y = @y_A2 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_water_infrastructure_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Strategic Fuel Reserve
+		# 战略石油储备, 即原版储油罐
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|fuel_silo_speed"
+			position = { x = @x_B1 y = @y_A2 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_fuel_silo_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Radar Array
+		# 雷达站
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|radar_station_speed"
+			position = { x = @x_A1 y = @y_A3 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_radar_station_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Air Base
+		# 空军基地
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|air_base_speed"
+			position = { x = @x_B1 y = @y_A3 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_air_base_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Anti-Air
+		# 防空设施
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|anti_air_building_speed"
+			position = { x = @x_A1 y = @y_A4 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_anti_air_building_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Civil Defense Shelters
+		# 民防掩体
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|nuclear_bunker_speed"
+			position = { x = @x_B1 y = @y_A4 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_nuclear_bunker_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		
+		### DEVELOPMENT ###
+		# Office Park
+		# 办公园区
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|office_park_speed"
+			position = { x = @x_A1 y = @y_B1 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_office_park_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Agri-Industrial Complex
+		# 农业工业复合体
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|agri_industrial_complex_speed"
+			position = { x = @x_B1 y = @y_B1 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_agri_industrial_complex_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Military-Industrial Manufactory
+		# 军用工厂
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|arms_factory_speed"
+			position = { x = @x_A1 y = @y_B2 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_arms_factory_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Industrial Park
+		# 工业园区
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|industrial_complex_speed"
+			position = { x = @x_B1 y = @y_B2 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_industrial_complex_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Naval Drydock
+		# 干船坞
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|dockyard_speed"
+			position = { x = @x_A1 y = @y_B3 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_dockyard_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Petrochemical Refinery
+		# 合成精炼厂
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|synthetic_refinery_speed"
+			position = { x = @x_B1 y = @y_B3 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_synthetic_refinery_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Foundry District
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|steel_factory_speed"
+			position = { x = @x_A1 y = @y_B4 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_steel_factory_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Rare Earth Hydrometallurgy Plant
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|tungsten_factory_speed"
+			position = { x = @x_B1 y = @y_B4 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_tungsten_factory_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Powerplant - Fossil Fuels
+		# 发电厂 - 化石燃料
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|fossil_fuel_powerplant_speed"
+			position = { x = @x_A1 y = @y_B5 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_fossil_fuel_powerplant_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Powerplant - Renewables
+		# 发电厂 - 可再生能源
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|renewable_powerplant_speed"
+			position = { x = @x_B1 y = @y_B5 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_renewable_powerplant_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Powerplant - Nuclear
+		# 发电厂 - 核能
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|nuclear_powerplant_speed"
+			position = { x = @x_A1 y = @y_B6 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_nuclear_powerplant_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Nuclear Weapons Manufactory
+		# 核武工厂
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|nuclear_reactor_speed"
+			position = { x = @x_B1 y = @y_B6 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_nuclear_reactor_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# ICBM Silo is AI-only, so it will not be show here.
+
+		### INSTALLATIONS ###
+		# Supply Hub
+		# 补给站
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|supply_node_speed"
+			position = { x = @x_A1 y = @y_C1 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_supply_node_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Railways
+		# 铁路
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|rail_way_speed"
+			position = { x = @x_B1 y = @y_C1 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_rail_way_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Naval Base
+		# 海军基地
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|naval_base_speed"
+			position = { x = @x_A1 y = @y_C2 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_naval_base_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Land Fort
+   		# 陆地堡垒
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|bunker_speed"
+			position = { x = @x_B1 y = @y_C2 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_bunker_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+		# Coastal Fort
+    	# 海岸堡垒
+		instantTextBoxType = {
+			name = "INTERFACE|COUNTRYCONSTRUCTIONSVIEW|TEXT|coastal_bunker_speed"
+			position = { x = @x_A1 y = @y_C3 }
+			font = "cg_16b"
+			text = "[?modifier@production_speed_coastal_bunker_factor|%0=+]"
+			maxWidth = 50
+			maxHeight = 20
+			format = right
+			alwaystransparent = yes
+		}
+	}
+}

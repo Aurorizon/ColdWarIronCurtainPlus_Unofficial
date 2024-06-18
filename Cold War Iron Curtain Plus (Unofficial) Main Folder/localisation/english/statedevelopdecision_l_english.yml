@@ -1,0 +1,80 @@
+﻿l_english:
+ CWICP_state-develop-decision_category: "CWICP State Develop Decision(SDD)"
+ CWICP_state-develop-decision_category_desc: "State Infrastructure: 125B\nMunicipal Infrastructure: 125B\nWater Infrastructure: 150B\nStrategic Fuel Reserve: 125B\nOffice Park: 587.5B\nAgri-Industrial Complex: 150B\nMilitary-Industrial Manufactory: 380B\nIndustrial Park: 380B\nNaval Drydock: 325B\nPetrochemical Refinery: 380B\nFoundry District: 205B\nRare Earth Hydrometallurgy Plant: 575B\nPowerplant - Fossil Fuels: 150B\nPowerplant - Renewables: 212.5B\nPowerplant - Nuclear: 812.5B"
+ CWICP_SDD_enable_decision: "ENABLE SDD"
+ CWICP_SDD_disable_decision: "DISABLE SDD"
+
+ CWICP_SDD_invest-in-state-infrastructure: "Invest in State Infrastructure"
+ CWICP_SDD_invest-in-state-infrastructure_desc: "Cost 125B"
+ CWICP_SDD_enable_state-infrastructure: "ENABLE: Invest in State Infrastructure"
+ CWICP_SDD_disable_state-infrastructure: "DISABLE: Invest in State Infrastructure"
+
+ CWICP_SDD_invest-in-infrastructure: "Invest in Municipal Infrastructure"
+ CWICP_SDD_invest-in-infrastructure_desc: "Cost 125B"
+ CWICP_SDD_enable_infrastructure: "ENABLE: Invest in Municipal Infrastructure"
+ CWICP_SDD_disable_infrastructure: "DISABLE: Invest in Municipal Infrastructure"
+ 
+ CWICP_SDD_invest-in-water-infrastructure: "Invest in Water Infrastructure"
+ CWICP_SDD_invest-in-water-infrastructure_desc: "Cost 150B"
+ CWICP_SDD_enable_water-infrastructure: "ENABLE: Invest in Water Infrastructure"
+ CWICP_SDD_disable_water-infrastructure: "DISABLE: Invest in Water Infrastructure"
+
+ CWICP_SDD_invest-in-fuel-silo: "Invest in Strategic Fuel Reserve"
+ CWICP_SDD_invest-in-fuel-silo_desc: "Cost 125B"
+ CWICP_SDD_enable_fuel-silo: "ENABLE: Invest in Strategic Fuel Reserve"
+ CWICP_SDD_disable_fuel-silo: "DISABLE: Invest in Strategic Fuel Reserve"
+
+ CWICP_SDD_invest-in-office-park: "Invest in Office Park"
+ CWICP_SDD_invest-in-office-park_desc: "Cost 587.5B"
+ CWICP_SDD_enable_invest-in-office-pack: "ENABLE: Invest in Office Park"
+ CWICP_SDD_disable_invest-in-office-pack: "DISABLE: Invest in Office Park"
+
+ CWICP_SDD_invest-in-agri-industrial-complex: "Invest in Agri-Industrial Complex"
+ CWICP_SDD_invest-in-agri-industrial-complex_desc: "Cost 150B"
+ CWICP_SDD_enable_invest-in-agri-industrial-complex: "ENABLE: Invest in Agri-Industrial Complex"
+ CWICP_SDD_disable_invest-in-agri-industrial-complex: "DISABLE: Invest in Agri-Industrial Complex"
+
+ CWICP_SDD_invest-in-arms-factory: "Invest in Military-Industrial Manufactory"
+ CWICP_SDD_invest-in-arms-factory_desc: "Cost 380B"
+ CWICP_SDD_enable_invest-in-arms-factory: "ENABLE: Invest in Military-Industrial Manufactory"
+ CWICP_SDD_disable_invest-in-arms-factory: "DISABLE: Invest in Military-Industrial Manufactory"
+
+ CWICP_SDD_invest-in-industrial-complex: "Invest in Industrial Park"
+ CWICP_SDD_invest-in-industrial-complex_desc: "Cost 380B"
+ CWICP_SDD_enable_invest-in-industrial-complex: "ENABLE: Invest in Industrial Park"
+ CWICP_SDD_disable_invest-in-industrial-complex: "DISABLE: Invest in Industrial Park"
+
+ CWICP_SDD_invest-in-dockyard: "Invest in Naval Drydock"
+ CWICP_SDD_invest-in-dockyard_desc: "Cost 325B"
+ CWICP_SDD_enable_invest-in-dockyard: "ENABLE: Invest in Naval Drydock"
+ CWICP_SDD_disable_invest-in-dockyard: "DISABLE: Invest in Naval Drydock"
+
+ CWICP_SDD_invest-in-synthetic-refinery: "Invest in Petrochemical Refinery"
+ CWICP_SDD_invest-in-synthetic-refinery_desc: "Cost 380B"
+ CWICP_SDD_enable_invest-in-synthetic-refinery: "ENABLE: Invest in Petrochemical Refinery"
+ CWICP_SDD_disable_invest-in-synthetic-refinery: "DISABLE: Invest in Petrochemical Refinery"
+
+ CWICP_SDD_invest-in-steel-factory: "Invest in Foundry District"
+ CWICP_SDD_invest-in-steel-factory_desc: "Cost 205B"
+ CWICP_SDD_enable_invest-in-steel-factory: "ENABLE: Invest in Foundry District"
+ CWICP_SDD_disable_invest-in-steel-factory: "DISABLE: Invest in Foundry District"
+
+ CWICP_SDD_invest-in-tungsten-factory: "Invest in Rare Earth Hydrometallurgy Plant"
+ CWICP_SDD_invest-in-tungsten-factory_desc: "Cost 575B"
+ CWICP_SDD_enable_invest-in-tungsten-factory: "ENABLE: Invest in Rare Earth Hydrometallurgy Plant"
+ CWICP_SDD_disable_invest-in-tungsten-factory: "DISABLE: Invest in Rare Earth Hydrometallurgy Plant"
+
+ CWICP_SDD_invest-in-fossil-fuel-powerplant: "Invest in Powerplant - Fossil Fuels"
+ CWICP_SDD_invest-in-fossil-fuel-powerplant_desc: "Cost 150B"
+ CWICP_SDD_enable_invest-in-fossil-fuel-powerplant: "ENABLE: Invest in Powerplant - Fossil Fuels"
+ CWICP_SDD_disable_invest-in-fossil-fuel-powerplant: "DISABLE: Invest in Powerplant - Fossil Fuels"
+
+ CWICP_SDD_invest-in-renewable-powerplant: "Invest in Powerplant - Renewables"
+ CWICP_SDD_invest-in-renewable-powerplant_desc: "Cost 212.5B"
+ CWICP_SDD_enable_invest-in-renewable-powerplant: "ENABLE: Invest in Powerplant - Renewables"
+ CWICP_SDD_disable_invest-in-renewable-powerplant: "DISABLE: Invest in Powerplant - Renewables"
+
+ CWICP_SDD_invest-in-nuclear-powerplant: "Invest in Powerplant - Nuclear"
+ CWICP_SDD_invest-in-nuclear-powerplant_desc: "Cost 812.5B"
+ CWICP_SDD_enable_invest-in-nuclear-powerplant: "ENABLE: Invest in Powerplant - Nuclear"
+ CWICP_SDD_disable_invest-in-nuclear-powerplant: "DISABLE: Invest in Powerplant - Nuclear"

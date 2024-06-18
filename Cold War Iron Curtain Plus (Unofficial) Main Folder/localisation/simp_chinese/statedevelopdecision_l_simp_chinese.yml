@@ -1,0 +1,82 @@
+﻿l_simp_chinese:
+ CWICP_state-develop-decision_category: "CWICP 省份发展决议(SDD)"
+ CWICP_state-develop-decision_category_desc: "省份基础设施: 125B\n市政基础设施: 125B\n水利基础设施: 150B\n战略石油储备: 125B\n办公园区: 587.5B\n农业工业复合体: 150B\n军用工厂: 380B\n工业园区: 380B\n干船坞: 325B\n合成精炼厂: 380B\n炼钢厂: 205B\n稀土厂: 575B\n化石燃料发电站: 150B\n可再生能源发电站: 212.5B\n核能发电站: 812.5B"
+ CWICP_SDD_enable_decision: "启用SDD"
+ CWICP_SDD_disable_decision: "停用SDD"
+
+ CWICP_SDD_invest-in-state-infrastructure: "投资省份基础设施"
+ CWICP_SDD_invest-in-state-infrastructure_desc: "花费 125B"
+ CWICP_SDD_enable_state-infrastructure: "启用: 投资省份基础设施"
+ CWICP_SDD_disable_state-infrastructure: "停用: 投资省份基础设施"
+
+ CWICP_SDD_invest-in-infrastructure: "投资市政基础设施"
+ CWICP_SDD_invest-in-infrastructure_desc: "花费 125B"
+ CWICP_SDD_enable_infrastructure: "启用: 投资市政基础设施"
+ CWICP_SDD_disable_infrastructure: "停用: 投资市政基础设施"
+ 
+ CWICP_SDD_invest-in-water-infrastructure: "投资水利基础设施"
+ CWICP_SDD_invest-in-water-infrastructure_desc: "花费 150B"
+ CWICP_SDD_enable_water-infrastructure: "启用: 投资水利基础设施"
+ CWICP_SDD_disable_water-infrastructure: "停用: 投资水利基础设施"
+
+ CWICP_SDD_invest-in-fuel-silo: "投资战略石油储备"
+ CWICP_SDD_invest-in-fuel-silo_desc: "花费 125B"
+ CWICP_SDD_enable_fuel-silo: "启用: 投资战略石油储备"
+ CWICP_SDD_disable_fuel-silo: "停用: 投资战略石油储备"
+
+ CWICP_SDD_invest-in-office-park: "投资办公园区"
+ CWICP_SDD_invest-in-office-park_desc: "花费 587.5B"
+ CWICP_SDD_enable_invest-in-office-pack: "启用: 投资办公园区"
+ CWICP_SDD_disable_invest-in-office-pack: "停用: 投资办公园区"
+
+ CWICP_SDD_invest-in-agri-industrial-complex: "投资农业工业复合体"
+ CWICP_SDD_invest-in-agri-industrial-complex_desc: "花费 150B"
+ CWICP_SDD_enable_invest-in-agri-industrial-complex: "启用: 投资农业工业复合体"
+ CWICP_SDD_disable_invest-in-agri-industrial-complex: "停用: 投资农业工业复合体"
+
+ CWICP_SDD_invest-in-arms-factory: "投资军用工厂"
+ CWICP_SDD_invest-in-arms-factory_desc: "花费 380B"
+ CWICP_SDD_enable_invest-in-arms-factory: "启用: 投资军用工厂"
+ CWICP_SDD_disable_invest-in-arms-factory: "停用: 投资军用工厂"
+
+ CWICP_SDD_invest-in-industrial-complex: "投资工业园区"
+ CWICP_SDD_invest-in-industrial-complex_desc: "花费 380B"
+ CWICP_SDD_enable_invest-in-industrial-complex: "启用: 投资工业园区"
+ CWICP_SDD_disable_invest-in-industrial-complex: "停用: 投资工业园区"
+
+ CWICP_SDD_invest-in-dockyard: "投资干船坞"
+ CWICP_SDD_invest-in-dockyard_desc: "花费 325B"
+ CWICP_SDD_enable_invest-in-dockyard: "启用: 投资干船坞"
+ CWICP_SDD_disable_invest-in-dockyard: "停用: 投资干船坞"
+
+ CWICP_SDD_invest-in-synthetic-refinery: "投资合成精炼厂"
+ CWICP_SDD_invest-in-synthetic-refinery_desc: "花费 380B"
+ CWICP_SDD_enable_invest-in-synthetic-refinery: "启用: 投资合成精炼厂"
+ CWICP_SDD_disable_invest-in-synthetic-refinery: "停用: 投资合成精炼厂"
+
+ CWICP_SDD_invest-in-steel-factory: "投资炼钢厂"
+ CWICP_SDD_invest-in-steel-factory_desc: "花费 205B"
+ CWICP_SDD_enable_invest-in-steel-factory: "启用: 投资炼钢厂"
+ CWICP_SDD_disable_invest-in-steel-factory: "停用: 投资炼钢厂"
+
+ CWICP_SDD_invest-in-tungsten-factory: "投资稀土厂"
+ CWICP_SDD_invest-in-tungsten-factory_desc: "花费 575B"
+ CWICP_SDD_enable_invest-in-tungsten-factory: "启用: 投资稀土厂"
+ CWICP_SDD_disable_invest-in-tungsten-factory: "停用: 投资稀土厂"
+
+ CWICP_SDD_invest-in-fossil-fuel-powerplant: "投资化石燃料发电站"
+ CWICP_SDD_invest-in-fossil-fuel-powerplant_desc: "花费 150B"
+ CWICP_SDD_enable_invest-in-fossil-fuel-powerplant: "启用: 投资化石燃料发电站"
+ CWICP_SDD_disable_invest-in-fossil-fuel-powerplant: "停用: 投资化石燃料发电站"
+
+ CWICP_SDD_invest-in-renewable-powerplant: "投资可再生能源发电站"
+ CWICP_SDD_invest-in-renewable-powerplant_desc: "花费 212.5B"
+ CWICP_SDD_enable_invest-in-renewable-powerplant: "启用: 投资可再生能源发电站"
+ CWICP_SDD_disable_invest-in-renewable-powerplant: "停用: 投资可再生能源发电站"
+
+ CWICP_SDD_invest-in-nuclear-powerplant: "投资核能发电站"
+ CWICP_SDD_invest-in-nuclear-powerplant_desc: "花费 812.5B"
+ CWICP_SDD_enable_invest-in-nuclear-powerplant: "启用: 投资核能发电站"
+ CWICP_SDD_disable_invest-in-nuclear-powerplant: "停用: 投资核能发电站"
+
+ construction_speed_open_tt: "这一按钮控制每一建筑各自的建筑速度的显示。"

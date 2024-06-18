@@ -1,0 +1,30 @@
+spriteTypes = {
+	corneredTileSpriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|TILES|basic_tiled_window_border"
+		size = {
+			x = 192
+			y = 192
+		}
+		textureFile = "gfx/interface/#shared_parts/tiles/construction_tab&state_view_border.dds"
+		borderSize = {
+			x = 64
+			y = 64
+		}
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_Abyss|tiles|tiled_window_scrollwheel_border"
+		size = {
+			x = 186
+			y = 186
+		}
+		textureFile = "gfx/interface/#shared_parts/tiles/tiled_window_scrollwheel.dds"
+		borderSize = {
+			x = 64
+			y = 64
+		}
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+}

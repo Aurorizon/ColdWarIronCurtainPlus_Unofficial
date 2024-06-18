@@ -1,0 +1,1947 @@
+# For gameplay and be "reasonable", not all building can be in invest in.
+
+CWICP_state-develop-decision_category =
+{
+	# ENABLE
+	CWICP_SDD_enable_decision =
+	{
+		cost = 0
+		visible =
+		{
+			NOT = { has_country_flag = CWICP_SDDenable }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDenable
+		}
+	}
+	# DISABLE
+	CWICP_SDD_disable_decision =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+		}
+		complete_effect =
+		{
+			# This is also a list to show what you can build by this dicision in game.
+			# Clear country flag "enable"
+			clr_country_flag = CWICP_SDDenable
+			# Clear INFRASTRUCTURE country flag for next time use
+			clr_country_flag = CWICP_SDDstate-infrastructure
+			clr_country_flag = CWICP_SDDinfrastructure
+			clr_country_flag = CWICP_SDDwater-infrastructure
+			clr_country_flag = CWICP_SDDfuel-silo
+			# Clear DEVELOPMENT country flag for next time use
+			clr_country_flag = CWICP_SDDoffice-pack
+			clr_country_flag = CWICP_SDDagri-industrial-complex
+			clr_country_flag = CWICP_SDDarms-factory
+			clr_country_flag = CWICP_SDDindustrial-complex
+			clr_country_flag = CWICP_SDDdockyard
+			clr_country_flag = CWICP_SDDsynthetic-refinery
+			clr_country_flag = CWICP_SDDsteel-factory
+			clr_country_flag = CWICP_SDDtungsten-factory
+			clr_country_flag = CWICP_SDDfossil-fuel-powerplant
+			clr_country_flag = CWICP_SDDrenewable-powerplant
+			clr_country_flag = CWICP_SDDnuclear-powerplant
+		}
+	}
+	###############
+	### EXAMPLE ###
+	###############
+	#CWICP_SDD_name =
+	#{
+	#	### 决议用时、耗费
+	#	days_remove = x
+	#	cost = x
+	#	### 决议可用性、范围
+	#	available =
+	#	{
+	#		FROM =
+	#		{
+	#			is_fully_controlled_by = ROOT
+	#		}
+	#		custom_trigger_tooltip =
+	#		{
+	#			tooltip = cannot_afford
+	#			check_variable =
+	#			{
+	#				var = currentMoney
+	#				value = 120
+	#				compare = greater_than_or_equals
+	#			}
+	#		}
+	#	}
+	#	visible =
+	#	{
+	#		FROM =
+	#		{
+	#			is_fully_controlled_by = ROOT
+	#			free_building_slots =
+	#			{
+	#				building = building_name
+	#				size > 0
+	#				include_locked = no
+	#			}
+	#		}
+	#		has_country_flag = CWICP_SDDenable
+	#		has_country_flag = CWICP_SDDname
+	#	}
+	#	ai_will_do =
+	#	{
+	#		factor = 0
+	#	}
+	#	state_target = yes
+	#	target_array = controlled_states
+	#	on_map_mode = map_only
+	#	### 决议效果
+	#	# 决议修正
+	#	modifier =
+	#	{
+	#		civilian_factory_use = 2
+	#	}
+	#	# 点选效果
+	#	complete_effect =
+	#	{
+	#		subtract_from_variable = { currentMoney = 0 }
+	#	}
+	#	# 结束效果(Days remove归零)
+	#	remove_effect =
+	#	{
+	#		FROM =
+	#		{
+	#			add_building_construction =
+	#			{
+	#				type = building_name
+	#				level = 1
+	#				instant_build = yes
+	#			}
+	#		}
+	#	}
+	#	# 中止条件
+	#	cancel_trigger =
+	#	{
+	#		FROM =
+	#		{
+	#			NOT =
+	#			{
+	#				is_controlled_by = ROOT
+	#			}
+	#		}
+	#	}
+	#	# 中止效果
+	#	cancel_effect =
+	#	{
+	#		# 添加到变量(返还 20 Money)
+	#		add_to_variable =
+	#		{
+	#			currentMoney = 20
+	#		}
+	#	}
+	#}
+	#CWICP_SDD_enable_name =
+	#{
+	#	cost = 0
+	#	visible =
+	#	{
+	#		has_country_flag = CWICP_SDDenable
+	#		NOT = { has_country_flag = CWICP_SDDname }
+	#	}
+	#	complete_effect =
+	#	{
+	#		set_country_flag = CWICP_SDDname
+	#	}
+	#}
+	#CWICP_SDD_disable_name =
+	#{
+	#	cost = 0
+	#	visible =
+	#	{
+	#		has_country_flag = CWICP_SDDenable
+	#		has_country_flag = CWICP_SDDname
+	#	}
+	#	complete_effect =
+	#	{
+	#		clr_country_flag = CWICP_SDDname
+	#	}
+	#}
+
+	######################
+	### INFRASTRUCTURE ###
+	######################
+	# 投资省份基础设施(125B)
+	CWICP_SDD_invest-in-state-infrastructure =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = state_infrastructure
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDstate-infrastructure
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (8000 + 4x500)/80 = 125
+			subtract_from_variable = { currentMoney = 125 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = state_infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_state-infrastructure =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDstate-infrastructure }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDstate-infrastructure
+		}
+	}
+	CWICP_SDD_disable_state-infrastructure =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDstate-infrastructure
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDstate-infrastructure
+		}
+	}
+	# 投资市政基础设施(125B)
+	CWICP_SDD_invest-in-infrastructure =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = infrastructure
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDinfrastructure
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (8000 + 4x500)/80 = 125
+			subtract_from_variable = { currentMoney = 125 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_infrastructure =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDinfrastructure }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDinfrastructure
+		}
+	}
+	CWICP_SDD_disable_infrastructure =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDinfrastructure
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDinfrastructure
+		}
+	}
+	# 投资水利基础设施(150B)
+	CWICP_SDD_invest-in-water-infrastructure =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = water_infrastructure
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDwater-infrastructure
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (10000 + 2x1000)/80 = 150
+			subtract_from_variable = { currentMoney = 150 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = water_infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_water-infrastructure =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDwater-infrastructure }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDwater-infrastructure
+		}
+	}
+	CWICP_SDD_disable_water-infrastructure =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDwater-infrastructure
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDwater-infrastructure
+		}
+	}
+	# 投资战略石油储备(125B)
+	CWICP_SDD_invest-in-fuel-silo =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = fuel_silo
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDfuel-silo
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# 10000 / 80 = 125
+			subtract_from_variable = { currentMoney = 125 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = fuel_silo
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_fuel-silo =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDfuel-silo }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDfuel-silo
+		}
+	}
+	CWICP_SDD_disable_fuel-silo =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDfuel-silo
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDfuel-silo
+		}
+	}
+
+	###################
+	### DEVELOPMENT ###
+	###################
+	# 投资办公园区(587.5B)
+	CWICP_SDD_invest-in-office-park =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = office_park
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDoffice-pack
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (50000 - 4x750)/80 = 587.5
+			subtract_from_variable = { currentMoney = 587.5 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = office_park
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-office-pack =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDoffice-pack }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDoffice-pack
+		}
+	}
+	CWICP_SDD_disable_invest-in-office-pack =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDoffice-pack
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDoffice-pack
+		}
+	}
+	# 投资农业复合体(150B)
+	CWICP_SDD_invest-in-agri-industrial-complex =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = agri_industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDagri-industrial-complex
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (13000 - 4x250)/80 = 150
+			subtract_from_variable = { currentMoney = 150 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = agri_industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-agri-industrial-complex =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDagri-industrial-complex }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDagri-industrial-complex
+		}
+	}
+	CWICP_SDD_disable_invest-in-agri-industrial-complex =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDagri-industrial-complex
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDagri-industrial-complex
+		}
+	}
+	# 投资军用工厂(380B)
+	CWICP_SDD_invest-in-arms-factory =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = arms_factory
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDarms-factory
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (32500 - 4x500)/80 = 381.25 -> 380
+			subtract_from_variable = { currentMoney = 380 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-arms-factory =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDarms-factory }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDarms-factory
+		}
+	}
+	CWICP_SDD_disable_invest-in-arms-factory =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDarms-factory
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDarms-factory
+		}
+	}
+	# 投资工业园区(380B)
+	CWICP_SDD_invest-in-industrial-complex =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = industrial_complex
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDindustrial-complex
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (32500 - 4x500)/80 = 381.25 -> 380
+			subtract_from_variable = { currentMoney = 380 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-industrial-complex =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDindustrial-complex }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDindustrial-complex
+		}
+	}
+	CWICP_SDD_disable_invest-in-industrial-complex =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDindustrial-complex
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDindustrial-complex
+		}
+	}
+	# 投资干船坞(325B)
+	CWICP_SDD_invest-in-dockyard =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = dockyard
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDdockyard
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (27500 - 4x375)/80 = 325
+			subtract_from_variable = { currentMoney = 325 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 20
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-dockyard =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDdockyard }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDdockyard
+		}
+	}
+	CWICP_SDD_disable_invest-in-dockyard =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDdockyard
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDdockyard
+		}
+	}
+	# 投资合成精炼厂(380B)
+	CWICP_SDD_invest-in-synthetic-refinery =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = synthetic_refinery
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDsynthetic-refinery
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (32500 - 4x500)/80 = 381.25 -> 380
+			subtract_from_variable = { currentMoney = 380 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-synthetic-refinery =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDsynthetic-refinery }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDsynthetic-refinery
+		}
+	}
+	CWICP_SDD_disable_invest-in-synthetic-refinery =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDsynthetic-refinery
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDsynthetic-refinery
+		}
+	}
+	# 投资炼钢厂(205B)
+	CWICP_SDD_invest-in-steel-factory =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = steel_factory
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDsteel-factory
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (17500 - 4x250)/80 =206.25 -> 205
+			subtract_from_variable = { currentMoney = 205 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = steel_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-steel-factory =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDsteel-factory }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDsteel-factory
+		}
+	}
+	CWICP_SDD_disable_invest-in-steel-factory =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDsteel-factory
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDsteel-factory
+		}
+	}
+	# 投资稀土冶炼厂(575B)
+	CWICP_SDD_invest-in-tungsten-factory =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = tungsten_factory
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDtungsten-factory
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (50000 - 4x1000)/80 = 575
+			subtract_from_variable = { currentMoney = 575 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = tungsten_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-tungsten-factory =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDtungsten-factory }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDtungsten-factory
+		}
+	}
+	CWICP_SDD_disable_invest-in-tungsten-factory =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDtungsten-factory
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDtungsten-factory
+		}
+	}
+	# 投资发电厂 - 化石燃料(150B)
+	CWICP_SDD_invest-in-fossil-fuel-powerplant =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = fossil_fuel_powerplant
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDfossil-fuel-powerplant
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (12500 - 4x125)/80 = 150
+			subtract_from_variable = { currentMoney = 150 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = fossil_fuel_powerplant
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-fossil-fuel-powerplant =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDfossil-fuel-powerplant }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDfossil-fuel-powerplant
+		}
+	}
+	CWICP_SDD_disable_invest-in-fossil-fuel-powerplant =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDfossil-fuel-powerplant
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDfossil-fuel-powerplant
+		}
+	}
+	# 发电厂 - 可再生能源(212.5B)
+	CWICP_SDD_invest-in-renewable-powerplant =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = renewable_powerplant
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDrenewable-powerplant
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (20000 - 4x750)/80 = 212.5
+			subtract_from_variable = { currentMoney = 212.5 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = renewable_powerplant
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-renewable-powerplant =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDrenewable-powerplant }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDrenewable-powerplant
+		}
+	}
+	CWICP_SDD_disable_invest-in-renewable-powerplant =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDrenewable-powerplant
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDrenewable-powerplant
+		}
+	}
+	# 发电厂 - 核能(812.5B)
+	CWICP_SDD_invest-in-nuclear-powerplant =
+	{
+		### 决议用时、耗费
+		days_remove = 120
+		cost = 10
+		### 决议可用性、范围
+		available =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+			}
+			custom_trigger_tooltip =
+			{
+				tooltip = cannot_afford
+				check_variable =
+				{
+					var = currentMoney
+					value = 120
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		visible =
+		{
+			FROM =
+			{
+				is_fully_controlled_by = ROOT
+				free_building_slots =
+				{
+					building = nuclear_powerplant
+					size > 0
+					include_locked = no
+				}
+			}
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDrenewable-powerplant
+		}
+		ai_will_do =
+		{
+			factor = 0
+		}
+		state_target = yes
+		target_array = controlled_states
+		on_map_mode = map_only
+		### 决议效果
+		# 决议修正
+		modifier =
+		{
+			civilian_factory_use = 2
+		}
+		# 点选效果
+		complete_effect =
+		{
+			# (75000 - 2x5000)/80 = 812.5
+			subtract_from_variable = { currentMoney = 812.5 }
+		}
+		# 结束效果(Days remove归零)
+		remove_effect =
+		{
+			FROM =
+			{
+				add_building_construction =
+				{
+					type = nuclear_powerplant
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		# 中止条件
+		cancel_trigger =
+		{
+			FROM =
+			{
+				NOT =
+				{
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		# 中止效果
+		cancel_effect =
+		{
+			# 添加到变量(返还 20 Money)
+			add_to_variable =
+			{
+				currentMoney = 25
+			}
+		}
+	}
+	CWICP_SDD_enable_invest-in-nuclear-powerplant =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			NOT = { has_country_flag = CWICP_SDDnuclear-powerplant }
+		}
+		complete_effect =
+		{
+			set_country_flag = CWICP_SDDnuclear-powerplant
+		}
+	}
+	CWICP_SDD_disable_invest-in-nuclear-powerplant =
+	{
+		cost = 0
+		visible =
+		{
+			has_country_flag = CWICP_SDDenable
+			has_country_flag = CWICP_SDDnuclear-powerplant
+		}
+		complete_effect =
+		{
+			clr_country_flag = CWICP_SDDnuclear-powerplant
+		}
+	}
+}
