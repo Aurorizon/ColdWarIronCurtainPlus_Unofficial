@@ -203,7 +203,7 @@ spriteTypes = {
 }
 
 #######################
-### Abyss Programme ###
+### CWICP Programme ###
 #######################
 spriteTypes = {
 	# ANIMATION
@@ -259,11 +259,6 @@ spriteTypes = {
 		name = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|ICON|non_available_factory_icon"
 		textureFile = "gfx/interface/countryconstructionsview/icon/non_available_factory_icon.dds"
 	}
-	# BUTTON
-	#spriteType = {
-	#	name = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BUTTON|closebutton_30x30"
-	#	textureFile = "gfx/interface/[Abyss]closebutton_30x30.dds"
-	#}
 	textSpriteType = {
 		name = "GFX_INTERFACE|COUNTRYCONSTRUCTIONSVIEW|BUTTON|button_80x30"
 		texturefile = "gfx/interface/countryconstructionsview/button/button_80x30.tga"

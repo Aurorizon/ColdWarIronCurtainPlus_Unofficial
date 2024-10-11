@@ -1,0 +1,40 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BUTTON|CloseButton_Type_A,30x30"
+		textureFile = "gfx/interface/#shared_parts/button/closebutton_type_a,30x30.dds"
+	}
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BUTTON|closebutton_30x30"
+		textureFile = "gfx/interface/#shared_parts/button/closebutton_30x30.dds"
+	}
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BUTTON|closebutton_34x34"
+		textureFile = "gfx/interface/#shared_parts/button/closebutton_34x34.dds"
+	}
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BUTTON|Button,150x30"
+		textureFile = "gfx/interface/#shared_parts/button/button,150x30.dds"
+	}
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BUTTON|Button,220x30"
+		textureFile = "gfx/interface/#shared_parts/button/button,220x30.dds"
+	}
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BUTTON|Button,180x30F2"
+		textureFile = "gfx/interface/#shared_parts/button/button,180x30f2.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BUTTON|Button,210x30F2"
+		textureFile = "gfx/interface/#shared_parts/button/button,210x30f2.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|BUTTON|Button,240x30F2"
+		textureFile = "gfx/interface/#shared_parts/button/button,240x30f2.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+		noOfFrames = 2
+	}
+}

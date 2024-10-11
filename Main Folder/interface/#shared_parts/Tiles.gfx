@@ -14,7 +14,21 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
 	}
 	corneredTileSpriteType = {
-		name = "GFX_Abyss|tiles|tiled_window_scrollwheel_border"
+		name = "GFX_INTERFACE|SHARED_PARTS|TILES|BasicTiledWindowBorder_TypeB"
+		size = {
+			x = 192
+			y = 192
+		}
+		textureFile = "/gfx/interface/#shared_parts/tiles/tiled_window_scrollwheel_Type2.dds"
+		borderSize = {
+			x = 64
+			y = 64
+		}
+		tilingCenter = yes
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	corneredTileSpriteType = {
+		name = "GFX_INTERFACE|SHARED_PARTS|TILES|TiledWindowScrollwheelBorder"
 		size = {
 			x = 186
 			y = 186

@@ -82,7 +82,7 @@ guiTypes = {
 			background = {
 				name = "Background"
 				#quadTextureSprite ="GFX_tiled_window2_1b_border"
-				quadTextureSprite = "GFX_Abyss|tiles|tiled_window_scrollwheel_border"
+				quadTextureSprite = "GFX_INTERFACE|SHARED_PARTS|TILES|TiledWindowScrollwheelBorder"
 			}
 
 			gridboxType = {

@@ -1,5 +1,8 @@
 NDefines = {
---CURRENT VERSION: Dev_0.3.5A
+--CURRENT VERSION:
+--Dev_0.3.5A
+--DEFINES TARGET VERSION:
+--1.14.8
 NGame = {
 	--|CWIC 0.3.8| "1936.1.1.12" -> "1945.5.23.12"
 	START_DATE = "1936.1.1.12",
